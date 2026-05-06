@@ -1,0 +1,2 @@
+'use client';import { useEffect,useState } from 'react';import { SecretLayout } from '@/components/Layout';import { loadProgress, saveProgress } from '@/lib/progress';
+export default function Page(){const [x,setX]=useState(false);useEffect(()=>{const p=loadProgress();p.sawOldSafety=true;saveProgress(p);const t=setTimeout(()=>setX(true),3200);return ()=>clearTimeout(t)},[]);return <SecretLayout title='令和6年度 こども絵画コンクール'><p>優秀賞：{x?'該当児童なし':'有坂 燈 さん'}</p><p>作品名：{x?'「安全な街」':'「お姉ちゃんの帰る場所」'}</p></SecretLayout>}

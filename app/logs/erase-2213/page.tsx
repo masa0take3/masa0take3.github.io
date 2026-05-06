@@ -1,0 +1,2 @@
+'use client';import { useEffect,useState } from 'react';import { SecretLayout } from '@/components/Layout';import { loadProgress, saveProgress } from '@/lib/progress';
+export default function P(){const [c,setC]=useState(1);useEffect(()=>{const p=loadProgress();p.sawEraseLog+=1;saveProgress(p);setC(p.sawEraseLog)},[]);const t=c===1?['22:13:04 真柴悠斗が資料庫へアクセス','22:13:31 真柴悠斗という職員は存在しません']:c===2?['22:13:04 不明職員が資料庫へアクセス','22:13:31 該当する職員は存在しません']:['該当するログは存在しません。'];return <SecretLayout title='erase-2213'>{t.map(v=><p key={v}>{v}</p>)}</SecretLayout>}

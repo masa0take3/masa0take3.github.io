@@ -1,0 +1,3 @@
+'use client';import Link from 'next/link';import { SecretLayout } from '@/components/Layout';import { loadProgress, saveProgress } from '@/lib/progress';
+const set=(e:'public'|'sisters'|'stability')=>{const p=loadProgress();p.ending=e;saveProgress(p)};
+export default function P(){return <SecretLayout title='最終選択'><ul className='space-y-2'><li><Link href='/ending/public' onClick={()=>set('public')} className='underline'>1. 燈の記録を公開する</Link></li><li><Link href='/ending/sisters' onClick={()=>set('sisters')} className='underline'>2. 燈だけを澪に返す</Link></li><li><Link href='/ending/stability' onClick={()=>set('stability')} className='underline'>3. ORACLE-Mに任せる</Link></li></ul></SecretLayout>}

@@ -1,0 +1,4 @@
+'use client';
+import Link from 'next/link';import { PublicLayout } from '@/components/Layout';import { loadProgress, saveProgress } from '@/lib/progress';import { useEffect,useState } from 'react';
+export default function Page(){const [ending,setEnding]=useState<string|null>(null);useEffect(()=>{const p=loadProgress();p.visitedIntro=true;saveProgress(p);setEnding(p.ending);},[]);return <PublicLayout title='白依市公式ポータル'>
+<div className='bg-white border rounded p-4'><p className='whitespace-pre-line text-sm'>{ending==='stability'?'白依市は安全な街です。':'妹が消えました。\n\nでも、警察も学校も、両親でさえ、「妹なんていない」と言います。\nでも私は覚えています。妹の名前は、有坂 燈です。\n白依市の公式サイトに、まだ妹の名前が一箇所だけ残っています。お願いです。見つけてください。\n―― 有坂 澪'}</p></div><p>白依市では2025年度以降、失踪者の定義に該当する市民は確認されていません。</p><Link href='/search' className='underline'>市内検索へ</Link></PublicLayout>}

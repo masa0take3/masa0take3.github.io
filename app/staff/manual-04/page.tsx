@@ -1,0 +1,2 @@
+import Link from 'next/link';import { SecretLayout } from '@/components/Layout';
+export default function P(){return <SecretLayout title='職員マニュアル M-04'><ol className='list-decimal pl-5'><li>即時否定しない</li><li>苦痛に共感</li><li>存在証明発言を避ける</li><li>整合性優先</li><li>センターへ誘導</li></ol><p className='text-xs'>mashiba: この資料を信じるな。<Link href='/staff/mashiba-note' className='underline'>/staff/mashiba-note</Link></p></SecretLayout>}
